@@ -1,0 +1,32 @@
+name: Godot Export
+
+on:
+  push: 
+  # Triggers the workflow on any push to the main branch
+    branches:
+      - main 
+  pull_request: 
+  # Triggers the workflow on any pull request targeting the main branch
+    branches:
+      - main 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # Specifies the environment (Ubuntu) where the job will run
+
+    steps:
+     # Step 1: Check out the repository code
+      - name: Check out code
+        uses: actions/checkout@v3 # Action to clone the repository into the runner
+      
+     # Step 2: Godot Export
+      - name: Godot Export
+        uses: firebelley/godot-export@v6.0.0
+        with: 
+             #The download url of the Linux Headless Godot executable
+             godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/4.3/Godot_v4.3-stable_linux.x86_64.zip
+             #The url of the export templates corresponding to the Godot executable version.
+             godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.3/Godot_v4.3-stable_export_templates.tpz
+             #The path relative to the root of the git repository that contains the "project.godot" file.
+             relative_project_path: ./
+        
