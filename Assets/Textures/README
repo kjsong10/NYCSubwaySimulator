@@ -1,0 +1,1 @@
+Directory containing all model asset textures found in Assets/Models. Use the MTL texture for any OBJ files. GLB files come prepacked with textures. If editing any models using the .blend files, use the 128x128 PNG texture. 
