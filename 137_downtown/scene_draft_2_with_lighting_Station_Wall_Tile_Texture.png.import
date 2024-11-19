@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://c7y4v7aoftsik"
+path.s3tc="res://.godot/imported/scene_draft_2_with_lighting_Station_Wall_Tile_Texture.png-2703bb3409b764eb87a3c682f63549f3.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "79822d65d3e9445fa21957b99e3130d6"
+}
+
+[deps]
+
+source_file="res://137_downtown/scene_draft_2_with_lighting_Station_Wall_Tile_Texture.png"
+dest_files=["res://.godot/imported/scene_draft_2_with_lighting_Station_Wall_Tile_Texture.png-2703bb3409b764eb87a3c682f63549f3.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
