@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpm16pdhopijp"]
+[gd_scene load_steps=19 format=3 uid="uid://dpm16pdhopijp"]
 
 [ext_resource type="PackedScene" uid="uid://1veen5ulfa1o" path="res://137_downtown/scene_draft_2_with_lighting.glb" id="1_yoh48"]
 [ext_resource type="PackedScene" uid="uid://xkm0btgiyr24" path="res://player.tscn" id="2_4wl5u"]
@@ -6,18 +6,203 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bunqd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8qvyd"]
-size = Vector3(390, 1, 40)
+size = Vector3(120, 1, 37)
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_bg1h4"]
+size = Vector3(198, 1, 22)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jga2e"]
+size = Vector3(90, 1, 22)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fjykj"]
+size = Vector3(166, 22, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rum1o"]
+size = Vector3(40, 22, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5dncn"]
+size = Vector3(81, 22, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7x1l5"]
+size = Vector3(22, 22, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bm2sr"]
+size = Vector3(22, 22, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pm1je"]
+size = Vector3(73, 22, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w8rpp"]
+size = Vector3(10, 1, 22)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p1dlo"]
+size = Vector3(10, 1, 22)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qb0eu"]
+radius = 2.6
+height = 20.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m41ts"]
+radius = 4.0
+height = 16.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gkrsj"]
+size = Vector3(15, 5, 4)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uidl4"]
+radius = 1.5
+height = 12.0
+
+[node name="137" type="Node3D"]
 
 [node name="scene_draft_2_with_lighting" parent="." instance=ExtResource("1_yoh48")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 
-[node name="Floor" type="StaticBody3D" parent="scene_draft_2_with_lighting"]
+[node name="Floor+walls" type="StaticBody3D" parent="scene_draft_2_with_lighting"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4)
 physics_material_override = SubResource("PhysicsMaterial_bunqd")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Floor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Floor+walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 0, -0.5)
 shape = SubResource("BoxShape3D_8qvyd")
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Floor+walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.5, 0, 7.5)
+shape = SubResource("BoxShape3D_bg1h4")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Floor+walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 151.5, 0, 7.5)
+shape = SubResource("BoxShape3D_jga2e")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Floor+walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -112, 11.5, -3)
+shape = SubResource("BoxShape3D_fjykj")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Floor+walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 11.5, -19)
+shape = SubResource("BoxShape3D_rum1o")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Floor+walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.5, 11.5, -19)
+shape = SubResource("BoxShape3D_5dncn")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Floor+walls"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 114.879, 11.5, -11.1213)
+shape = SubResource("BoxShape3D_7x1l5")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Floor+walls"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -21.1213, 11.5, -11.1213)
+shape = SubResource("BoxShape3D_bm2sr")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Floor+walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 159, 11.5, -3)
+shape = SubResource("BoxShape3D_pm1je")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Floor+walls"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -17.5251, 0, -7.97487)
+shape = SubResource("BoxShape3D_w8rpp")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Floor+walls"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 110.475, 0, -7.97487)
+shape = SubResource("BoxShape3D_p1dlo")
+
+[node name="Columns" type="StaticBody3D" parent="scene_draft_2_with_lighting"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Columns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 9, 16)
+shape = SubResource("CapsuleShape3D_qb0eu")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Columns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 9, 16)
+shape = SubResource("CapsuleShape3D_qb0eu")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Columns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 9, 16)
+shape = SubResource("CapsuleShape3D_qb0eu")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Columns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 9, 16)
+shape = SubResource("CapsuleShape3D_qb0eu")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Columns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95, 9, 16)
+shape = SubResource("CapsuleShape3D_qb0eu")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Columns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124, 9, 16)
+shape = SubResource("CapsuleShape3D_qb0eu")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Columns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 152, 9, 16)
+shape = SubResource("CapsuleShape3D_qb0eu")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Columns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181, 9, 16)
+shape = SubResource("CapsuleShape3D_qb0eu")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Columns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 9, 16)
+shape = SubResource("CapsuleShape3D_qb0eu")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Columns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77, 9, 16)
+shape = SubResource("CapsuleShape3D_qb0eu")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Columns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -106, 9, 16)
+shape = SubResource("CapsuleShape3D_qb0eu")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Columns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134, 9, 16)
+shape = SubResource("CapsuleShape3D_qb0eu")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Columns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -163, 9, 16)
+shape = SubResource("CapsuleShape3D_qb0eu")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Columns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 9, 16)
+shape = SubResource("CapsuleShape3D_qb0eu")
+
+[node name="Trash" type="StaticBody3D" parent="scene_draft_2_with_lighting"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Trash"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 3.334, -11)
+shape = SubResource("CapsuleShape3D_m41ts")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Trash"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 3.334, -11)
+shape = SubResource("CapsuleShape3D_m41ts")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Trash"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67, 3.334, 4)
+shape = SubResource("CapsuleShape3D_m41ts")
+
+[node name="Benches" type="StaticBody3D" parent="scene_draft_2_with_lighting"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Benches"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 2, -10.833)
+shape = SubResource("BoxShape3D_gkrsj")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Benches"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.4667, 2, -10.833)
+shape = SubResource("BoxShape3D_gkrsj")
+
+[node name="Help Stations" type="StaticBody3D" parent="scene_draft_2_with_lighting"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Help Stations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132, 9, 1.5)
+shape = SubResource("CapsuleShape3D_uidl4")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Help Stations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 10, -14.8)
+shape = SubResource("CapsuleShape3D_uidl4")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="scene_draft_2_with_lighting/Help Stations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -112, 10, 1.3)
+shape = SubResource("CapsuleShape3D_uidl4")
+
 [node name="Player" parent="." instance=ExtResource("2_4wl5u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 7, -8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 2, -1)
+
+[connection signal="child_entered_tree" from="." to="Player" method="_on__child_entered_tree"]
