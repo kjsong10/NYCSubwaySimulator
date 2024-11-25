@@ -1,0 +1,27 @@
+name: TestRunner
+
+on:
+  push: 
+  # Triggers the workflow on any push to the main branch
+    branches:
+      - main 
+  pull_request: 
+  # Triggers the workflow on any pull request targeting the main branch
+    branches:
+      - main 
+
+jobs:
+  Tests:
+    runs-on: ubuntu-latest # Specifies the environment (Ubuntu) where the job will run
+
+    steps:
+     # Step 1: Check out the repository code
+      - name: Check out code
+        uses: actions/checkout@v3 # Action to clone the repository into the runner
+      
+     # Step 2: Running Test Cases
+      - name: godot-tester
+        uses: croconut/godot-tester@v5.1
+        with: 
+             version: 4.3
+             test-dir: res://test/unit #directory for Gut Tests 
