@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu4mjubpfyqa3"]
+
+[ext_resource type="PackedScene" uid="uid://dmylci411mmm6" path="res://options_menu/options_display_button.tscn" id="1_v4f26"]
+[ext_resource type="Script" path="res://options_menu/windows_mode_button.gd" id="2_jlnyy"]
+
+[node name="Windows_Mode_Button" instance=ExtResource("1_v4f26")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+script = ExtResource("2_jlnyy")
+
+[node name="Label" parent="HBoxContainer" index="0"]
+text = "Window Mode"
