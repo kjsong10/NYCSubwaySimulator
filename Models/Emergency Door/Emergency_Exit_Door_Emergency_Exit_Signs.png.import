@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cljsj4t1iai4q"
+path.s3tc="res://.godot/imported/Emergency_Exit_Door_Emergency_Exit_Signs.png-01c854d19f3456246e5063a2e29706d5.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "dca7ab492dc4c8d188af1326f6afd6e8"
+}
+
+[deps]
+
+source_file="res://Models/Emergency Door/Emergency_Exit_Door_Emergency_Exit_Signs.png"
+dest_files=["res://.godot/imported/Emergency_Exit_Door_Emergency_Exit_Signs.png-01c854d19f3456246e5063a2e29706d5.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
