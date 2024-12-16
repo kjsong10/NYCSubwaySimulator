@@ -102,9 +102,15 @@ func _on__child_entered_tree(node: Node) -> void:
 func _on_summon_train_body_entered(body: Node3D) -> void:
 	if(body.is_in_group("player") and !train_arrived):
 		var train = $"/root/137/Train"
+		var train2= $"/root/137/Train2"
 		train.set_visible(true)
+		train2.set_visible(true)
 		var animPlayer: AnimationPlayer = $"/root/137/Train/AnimationPlayer"
+		var animPlayer1: AnimationPlayer = $"/root/137/Train2/AnimationPlayer"
+		
 		animPlayer.play("Enter Station")
+		animPlayer1.play("Enter Station_2")
+		
 		train_arrived = true
 
 func open_map():

@@ -1,7 +1,7 @@
-[gd_scene load_steps=41 format=3 uid="uid://dpm16pdhopijp"]
+[gd_scene load_steps=42 format=3 uid="uid://dpm16pdhopijp"]
 
 [ext_resource type="Script" path="res://137.gd" id="1_xbwpr"]
-[ext_resource type="PackedScene" uid="uid://1veen5ulfa1o" path="res://Models/137_downtown/scene_draft_2_with_lighting.glb" id="1_yoh48"]
+[ext_resource type="PackedScene" uid="uid://1veen5ulfa1o" path="res://137_downtown/scene_draft_2_with_lighting.glb" id="1_yoh48"]
 [ext_resource type="PackedScene" uid="uid://xkm0btgiyr24" path="res://player.tscn" id="2_4wl5u"]
 [ext_resource type="PackedScene" uid="uid://cdal0wuq2j52s" path="res://PauseMenu/pause_menu.tscn" id="2_f5m0y"]
 [ext_resource type="PackedScene" uid="uid://c4a42ybb4lhq3" path="res://Models/Emergency Door/Emergency_Exit_Door.glb" id="2_lvvat"]
@@ -106,7 +106,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(82, -2.5, 12.6), Vector3(0, -2.5, 12.6)]
+"values": [Vector3(82, -2.5, 12.6), Vector3(-39.1558, -2.5, 12.6)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -191,6 +191,18 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(21.3617, 2.8, -3.014), Vector3(20.4173, 2.8, -3.014)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = false
+tracks/8/path = NodePath(".:position")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(124.204, -2.5, 12.6), Vector3(3.2, -2.5, 12.6)]
 }
 
 [sub_resource type="Animation" id="Animation_teht0"]
@@ -291,10 +303,135 @@ tracks/7/keys = {
 "update": 0,
 "values": [Vector3(21.3617, 2.8, -3.014)]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(124.204, -2.5, 12.6)]
+}
+
+[sub_resource type="Animation" id="Animation_uifd0"]
+resource_name = "Enter Station_2"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(82, -2.5, 12.6), Vector3(-39.1558, -2.5, 12.6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(4.592, 2.8, -3.014), Vector3(5.42534, 2.8, -3.014)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Door2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(3.70311, 2.8, -3.014), Vector3(2.70311, 2.8, -3.014)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Door3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(11.5364, 2.8, -3.014), Vector3(12.4253, 2.8, -3.014)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Door4:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(10.6476, 2.8, -3.014), Vector3(9.64756, 2.8, -3.014)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Door5:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(18.5364, 2.8, -3.014), Vector3(19.4253, 2.8, -3.014)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Door6:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(17.6476, 2.8, -3.014), Vector3(16.6476, 2.8, -3.014)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Door13:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(2, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(21.3617, 2.8, -3.014), Vector3(20.4173, 2.8, -3.014)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".:position")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(124.204, -2.5, 12.6), Vector3(3.2, -2.5, 12.6)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vtbqf"]
 _data = {
 "Enter Station": SubResource("Animation_xwrs8"),
+"Enter Station_2": SubResource("Animation_uifd0"),
 "RESET": SubResource("Animation_teht0")
 }
 
@@ -696,11 +833,10 @@ transform = Transform3D(-5.68248e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.68248e-08, 
 transform = Transform3D(-5.68248e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.68248e-08, 61.2843, 0.515091, -20.5991)
 
 [node name="Player" parent="." instance=ExtResource("2_4wl5u")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 14, 2, -1)
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 14, 2, -1)
 
 [node name="Train" type="StaticBody3D" parent="."]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 82, -2.5, 12.6)
-visible = false
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 124.204, -2.5, 12.6)
 
 [node name="subway_car" type="MeshInstance3D" parent="Train"]
 transform = Transform3D(1.87451, 0, 0, 0, 1.87451, 0, 0, 0, 1.87451, 11.462, 2.90095, -1.21003)
@@ -871,6 +1007,185 @@ spot_attenuation = -0.29
 spot_angle = 86.36
 
 [node name="SpotLight3D26" type="SpotLight3D" parent="Train"]
+transform = Transform3D(0.555556, 0, 0, 0, -2.42842e-08, 0.555556, 0, -0.555556, -2.42842e-08, 20.8015, 4.69949, -1.15267)
+light_color = Color(1, 0.820127, 0.590629, 1)
+light_energy = 3.0
+spot_range = 7.516
+spot_attenuation = -0.29
+spot_angle = 86.36
+
+[node name="Train2" type="StaticBody3D" parent="."]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 124.204, -2.5, 12.6)
+
+[node name="subway_car" type="MeshInstance3D" parent="Train2"]
+transform = Transform3D(1.87451, 0, 0, 0, 1.87451, 0, 0, 0, 1.87451, 11.462, 2.90095, -1.21003)
+mesh = ExtResource("3_57qrf")
+skeleton = NodePath("")
+
+[node name="Body" type="StaticBody3D" parent="Train2/subway_car"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Train2/subway_car/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.92747, 5.96046e-08, -0.934285)
+shape = SubResource("BoxShape3D_yyfvq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Train2/subway_car/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.14037, 0.0841178, -0.00234103)
+shape = SubResource("BoxShape3D_wq1eo")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Train2/subway_car/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0601797, -0.0276946, 0.965033)
+shape = SubResource("BoxShape3D_2ndiv")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Train2/subway_car/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.13926, 0.0215209, 0.0317388)
+shape = SubResource("BoxShape3D_3prd0")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Train2/subway_car/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7217, 5.96046e-08, -0.934284)
+shape = SubResource("BoxShape3D_prmv7")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Train2/subway_car/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80387, 5.96046e-08, -0.934284)
+shape = SubResource("BoxShape3D_j2ejk")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Train2/subway_car/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85623, 5.96046e-08, -0.934284)
+shape = SubResource("BoxShape3D_01uc7")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="Train2/subway_car/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.21435, 5.96046e-08, -0.934284)
+shape = SubResource("BoxShape3D_t7pmj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Train2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 1.3, -1.2)
+shape = SubResource("BoxShape3D_icvdp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Train2"]
+libraries = {
+"": SubResource("AnimationLibrary_vtbqf")
+}
+
+[node name="Door" type="MeshInstance3D" parent="Train2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.734, 4.592, 2.8, -3.014)
+mesh = ExtResource("4_obnkt")
+skeleton = NodePath("")
+
+[node name="Door2" type="MeshInstance3D" parent="Train2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.734, 3.70311, 2.8, -3.014)
+mesh = ExtResource("4_obnkt")
+skeleton = NodePath("")
+
+[node name="Door3" type="MeshInstance3D" parent="Train2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.734, 11.5364, 2.8, -3.014)
+mesh = ExtResource("4_obnkt")
+skeleton = NodePath("")
+
+[node name="Door4" type="MeshInstance3D" parent="Train2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.734, 10.6476, 2.8, -3.014)
+mesh = ExtResource("4_obnkt")
+skeleton = NodePath("")
+
+[node name="Door5" type="MeshInstance3D" parent="Train2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.734, 18.5364, 2.8, -3.014)
+mesh = ExtResource("4_obnkt")
+skeleton = NodePath("")
+
+[node name="Door6" type="MeshInstance3D" parent="Train2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.734, 17.6476, 2.8, -3.014)
+mesh = ExtResource("4_obnkt")
+skeleton = NodePath("")
+
+[node name="Door7" type="MeshInstance3D" parent="Train2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.734, 11.5364, 2.8, 0.597112)
+mesh = ExtResource("4_obnkt")
+skeleton = NodePath("")
+
+[node name="Door8" type="MeshInstance3D" parent="Train2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.734, 10.6476, 2.8, 0.597112)
+mesh = ExtResource("4_obnkt")
+skeleton = NodePath("")
+
+[node name="Door9" type="MeshInstance3D" parent="Train2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.734, 18.4809, 2.8, 0.597113)
+mesh = ExtResource("4_obnkt")
+skeleton = NodePath("")
+
+[node name="Door10" type="MeshInstance3D" parent="Train2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.734, 17.592, 2.8, 0.597113)
+mesh = ExtResource("4_obnkt")
+skeleton = NodePath("")
+
+[node name="Door11" type="MeshInstance3D" parent="Train2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.734, 4.48089, 2.8, 0.597113)
+mesh = ExtResource("4_obnkt")
+skeleton = NodePath("")
+
+[node name="Door12" type="MeshInstance3D" parent="Train2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.734, 3.592, 2.8, 0.597113)
+mesh = ExtResource("4_obnkt")
+skeleton = NodePath("")
+
+[node name="Door13" type="MeshInstance3D" parent="Train2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.734, 21.3617, 2.8, -3.014)
+mesh = ExtResource("4_obnkt")
+skeleton = NodePath("")
+
+[node name="Door14" type="MeshInstance3D" parent="Train2"]
+transform = Transform3D(-4.37114e-08, 0, 0.734, 0, 1, 0, -1, 0, -3.20842e-08, 23.0284, 2.8, -0.847333)
+mesh = ExtResource("4_obnkt")
+skeleton = NodePath("")
+
+[node name="Door15" type="MeshInstance3D" parent="Train2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.734, 21.3698, 2.8, 0.597113)
+mesh = ExtResource("4_obnkt")
+skeleton = NodePath("")
+
+[node name="Door16" type="MeshInstance3D" parent="Train2"]
+transform = Transform3D(-4.37114e-08, 0, 0.734, 0, 1, 0, -1, 0, -3.20842e-08, -0.0827065, 2.8, -0.847333)
+mesh = ExtResource("4_obnkt")
+skeleton = NodePath("")
+
+[node name="SpotLight3D21" type="SpotLight3D" parent="Train2"]
+transform = Transform3D(0.555556, 0, 0, 0, -2.42842e-08, 0.555556, 0, -0.555556, -2.42842e-08, 2.00671, 4.69949, -1.15267)
+light_color = Color(1, 0.820127, 0.590629, 1)
+light_energy = 3.0
+spot_range = 7.516
+spot_attenuation = -0.29
+spot_angle = 86.36
+
+[node name="SpotLight3D22" type="SpotLight3D" parent="Train2"]
+transform = Transform3D(0.555556, 0, 0, 0, -2.42842e-08, 0.555556, 0, -0.555556, -2.42842e-08, 5.73988, 4.69949, -1.15267)
+light_color = Color(1, 0.820127, 0.590629, 1)
+light_energy = 3.0
+spot_range = 7.516
+spot_attenuation = -0.29
+spot_angle = 86.36
+
+[node name="SpotLight3D23" type="SpotLight3D" parent="Train2"]
+transform = Transform3D(0.555556, 0, 0, 0, -2.42842e-08, 0.555556, 0, -0.555556, -2.42842e-08, 9.76771, 4.69949, -1.15267)
+light_color = Color(1, 0.820127, 0.590629, 1)
+light_energy = 3.0
+spot_range = 7.516
+spot_attenuation = -0.29
+spot_angle = 86.36
+
+[node name="SpotLight3D24" type="SpotLight3D" parent="Train2"]
+transform = Transform3D(0.555556, 0, 0, 0, -2.42842e-08, 0.555556, 0, -0.555556, -2.42842e-08, 13.1675, 4.69949, -1.15267)
+light_color = Color(1, 0.820127, 0.590629, 1)
+light_energy = 3.0
+spot_range = 7.516
+spot_attenuation = -0.29
+spot_angle = 86.36
+
+[node name="SpotLight3D25" type="SpotLight3D" parent="Train2"]
+transform = Transform3D(0.555556, 0, 0, 0, -2.42842e-08, 0.555556, 0, -0.555556, -2.42842e-08, 16.8793, 4.69949, -1.15267)
+light_color = Color(1, 0.820127, 0.590629, 1)
+light_energy = 3.0
+spot_range = 7.516
+spot_attenuation = -0.29
+spot_angle = 86.36
+
+[node name="SpotLight3D26" type="SpotLight3D" parent="Train2"]
 transform = Transform3D(0.555556, 0, 0, 0, -2.42842e-08, 0.555556, 0, -0.555556, -2.42842e-08, 20.8015, 4.69949, -1.15267)
 light_color = Color(1, 0.820127, 0.590629, 1)
 light_energy = 3.0
