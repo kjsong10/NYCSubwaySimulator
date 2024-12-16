@@ -1,7 +1,9 @@
 extends CharacterBody3D
 
 @onready var joystick_right = $Controls/Virtual_Joystick_Right
+
 @onready var playerWalkingAudioStream = $footsteps_audio/footsteps_audio
+
 
 
 const DEFAULT_SPEED = 10.0
