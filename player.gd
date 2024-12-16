@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+@onready var joystick_right = $Controls/Virtual_Joystick_Right
+
+
 
 const DEFAULT_SPEED = 10.0
 var SPEED = DEFAULT_SPEED
@@ -10,7 +13,7 @@ const JUMP_VELOCITY = 6
 
 @onready var train_arrived = false
 
-
+# THIS IS COMMENTED SO MOUSE IS FREE TO MOVE AND NOT LOCKED
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -22,7 +25,14 @@ func _unhandled_input(event: InputEvent) -> void:
 			camera.rotate_x(-event.relative.y * 0.01)
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))
 
+
+
 func _physics_process(delta: float) -> void:
+	if joystick_right and joystick_right.is_pressed:
+		var look_input = joystick_right.output
+		neck.rotate_y(-look_input.x * 0.02)  # Horizontal rotation (yaw)       CHANGE THESE FOR SENSITIVITY
+		camera.rotate_x(-look_input.y * 0.02)  # Vertical rotation (pitch)     CHANGE THESE FOR SENSITIVITY 
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))  # Limit vertical rotation
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta

@@ -1,15 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://xkm0btgiyr24"]
+[gd_scene load_steps=6 format=3 uid="uid://xkm0btgiyr24"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_8yfgm"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="2_2svyv"]
+[ext_resource type="Texture2D" uid="uid://cxtdag035i1lr" path="res://button_texture/lineLight44.png" id="3_m0m0f"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8io7f"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_leeei"]
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
-
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
-
 script = ExtResource("1_8yfgm")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
@@ -22,3 +22,37 @@ mesh = SubResource("CapsuleMesh_leeei")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.637465, 0)
 
 [node name="Camera" type="Camera3D" parent="Neck"]
+
+[node name="Controls" type="CanvasLayer" parent="."]
+
+[node name="Virtual Joystick Left" parent="Controls" instance=ExtResource("2_2svyv")]
+action_left = "move_left"
+action_right = "move_right"
+action_up = "move_forward"
+action_down = "move_backwards"
+
+[node name="Virtual_Joystick_Right" parent="Controls" instance=ExtResource("2_2svyv")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+
+[node name="jump_button" type="Control" parent="Controls"]
+layout_mode = 3
+anchor_right = 0.074
+anchor_bottom = 0.124
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 4.92
+offset_bottom = 5.07999
+scale = Vector2(1.725, 1.6)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Controls/jump_button"]
+position = Vector2(1, 0)
+scale = Vector2(1.725, 1.6)
+texture_normal = ExtResource("3_m0m0f")
+action = "jump"
