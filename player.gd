@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+@onready var joystick_right = $Controls/Virtual_Joystick_Right
+
+
 
 const DEFAULT_SPEED = 10.0
 var SPEED = DEFAULT_SPEED
@@ -7,8 +10,10 @@ const JUMP_VELOCITY = 6
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera
 @onready var win_message_label = $"/root/Main/CanvasLayer/Label"
+
 @onready var train_arrived = false
 
+# THIS IS COMMENTED SO MOUSE IS FREE TO MOVE AND NOT LOCKED
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -20,13 +25,20 @@ func _unhandled_input(event: InputEvent) -> void:
 			camera.rotate_x(-event.relative.y * 0.01)
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))
 
+
+
 func _physics_process(delta: float) -> void:
+	if joystick_right and joystick_right.is_pressed:
+		var look_input = joystick_right.output
+		neck.rotate_y(-look_input.x * 0.02)  # Horizontal rotation (yaw)       CHANGE THESE FOR SENSITIVITY
+		camera.rotate_x(-look_input.y * 0.02)  # Vertical rotation (pitch)     CHANGE THESE FOR SENSITIVITY 
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))  # Limit vertical rotation
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	if Input.is_action_pressed("turn_left"):
 		neck.rotate_y(0.04)
@@ -68,6 +80,7 @@ func _on_win_body_exited(body: Node3D) -> void:
 	win_message_label.visible = false
 
 
+
 func _on_go_to_137_body_entered(body: Node3D) -> void:
 	print("going to 137")
 	if(get_tree() != null):
@@ -91,3 +104,13 @@ func _on_summon_train_body_entered(body: Node3D) -> void:
 		var animPlayer: AnimationPlayer = $"/root/137/Train/AnimationPlayer"
 		animPlayer.play("Enter Station")
 		train_arrived = true
+
+func open_map():
+	# Convert the Godot-specific path to a system path
+	var path = ProjectSettings.globalize_path("res://API/index.html")
+	OS.shell_open(path)
+	
+func _input(event):
+	if event.is_action_pressed("map_open"):
+		open_map()
+		

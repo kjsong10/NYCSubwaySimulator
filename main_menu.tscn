@@ -1,0 +1,165 @@
+[gd_scene load_steps=12 format=3 uid="uid://bpnihlcpvacpy"]
+
+[ext_resource type="Script" path="res://HBoxContainer.gd" id="1_r72we"]
+[ext_resource type="Script" path="res://main_menu.gd" id="2_8218f"]
+[ext_resource type="Texture2D" uid="uid://cfqpfxn0lqf8a" path="res://Background/DALL·E 2024-12-11 01.01.37 - A visually stunning simulation of the NYC Subway system in a 16_9 aspect ratio. The scene features a dynamic, realistic underground subway station wit.webp" id="2_qn8sd"]
+[ext_resource type="PackedScene" uid="uid://dry8kg01l2e0p" path="res://options_menu/options_menu.tscn" id="3_ff58q"]
+[ext_resource type="AudioStream" uid="uid://dijutmqfqxtrq" path="res://Music/soundtrack_mainmenu.mp3" id="5_spnst"]
+
+[sub_resource type="GDScript" id="GDScript_5p5t2"]
+script/source = "extends VBoxContainer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="SystemFont" id="SystemFont_qlio0"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="SystemFont" id="SystemFont_hfut4"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="SystemFont" id="SystemFont_lseku"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="GDScript" id="GDScript_baft0"]
+script/source = "class_name MainMenuControl
+extends Control
+
+@onready var start_button = $MarginContainer/HBoxContainer/VBoxContainer/Start_Button as Button
+@onready var exit_button = $MarginContainer/HBoxContainer/VBoxContainer/Exit_Button as Button
+@onready var options_button = $MarginContainer/HBoxContainer/VBoxContainer/Options_Button as Button
+@onready var options_menu = $Options_Menu as OptionsMenu
+@onready var margin_container = $MarginContainer as MarginContainer
+@onready var start_level = preload(\"res://main.tscn\") as PackedScene
+
+func _ready():
+	print(\"Start Button: \", start_button)
+	print(\"Options Button: \", options_button)
+	print(\"Exit Button: \", exit_button)
+	print(\"Options Menu: \", options_menu)
+	handle_connecting_signals()
+
+func on_start_pressed() -> void:
+	get_tree().change_scene_to_packed(start_level)
+
+func on_options_pressed() -> void:
+	margin_container.visible = false
+	options_menu.set_process(true)
+	options_menu.visible = true
+
+func on_exit_pressed() -> void:
+	get_tree().quit()
+
+func on_exit_options_menu() -> void:
+	margin_container.visible = true
+	options_menu.set_process(false)
+	options_menu.visible = false
+
+func handle_connecting_signals() -> void:
+	if start_button:
+		start_button.button_down.connect(on_start_pressed)
+	if options_button:
+		options_button.button_down.connect(on_options_pressed)
+	if exit_button:
+		exit_button.button_down.connect(on_exit_pressed)
+	if options_menu:
+		options_menu.exit_options_menu.connect(on_exit_options_menu)
+"
+
+[sub_resource type="SystemFont" id="SystemFont_xwdbh"]
+font_names = PackedStringArray("Impact")
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_8218f")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.996
+anchor_bottom = 0.998
+offset_right = -0.800049
+offset_bottom = 0.159912
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qn8sd")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.996
+anchor_bottom = 0.995
+offset_right = -0.800049
+offset_bottom = 0.399902
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r72we")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+script = SubResource("GDScript_5p5t2")
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_qlio0")
+theme_override_font_sizes/font_size = 100
+text = "NYC Subway Simulator"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 84
+alignment = 1
+
+[node name="Start_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_hfut4")
+theme_override_font_sizes/font_size = 70
+text = "Start Game"
+
+[node name="Options_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_lseku")
+theme_override_font_sizes/font_size = 70
+text = "Options"
+script = SubResource("GDScript_baft0")
+
+[node name="Exit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_xwdbh")
+theme_override_font_sizes/font_size = 70
+text = "Exit Game"
+
+[node name="Options_Menu" parent="." instance=ExtResource("3_ff58q")]
+visible = false
+layout_mode = 1
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_spnst")
+autoplay = true
+bus = &"Music"

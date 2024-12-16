@@ -1,11 +1,29 @@
-[gd_scene load_steps=37 format=3 uid="uid://dpm16pdhopijp"]
 
+[gd_scene load_steps=57 format=4 uid="uid://dpm16pdhopijp"]
+
+
+
+
+[ext_resource type="Script" path="res://137.gd" id="1_xbwpr"]
 [ext_resource type="PackedScene" uid="uid://1veen5ulfa1o" path="res://Models/137_downtown/scene_draft_2_with_lighting.glb" id="1_yoh48"]
 [ext_resource type="PackedScene" uid="uid://xkm0btgiyr24" path="res://player.tscn" id="2_4wl5u"]
+
+[ext_resource type="PackedScene" uid="uid://cdal0wuq2j52s" path="res://PauseMenu/pause_menu.tscn" id="2_f5m0y"]
+[ext_resource type="Texture2D" uid="uid://dm16km5opo4h7" path="res://Models/Train/Metro_Door.png" id="3_hamud"]
+[ext_resource type="Texture2D" uid="uid://dvhj7j505ed77" path="res://Models/Train/Metro_metal_02.png" id="4_p0np3"]
+[ext_resource type="Texture2D" uid="uid://cj17btqcxx6yb" path="res://Models/Train/Metro_metal.jpg" id="5_6rfg3"]
+[ext_resource type="Texture2D" uid="uid://cgei241a8256n" path="res://Models/Train/Metro_metal_01.jpg" id="6_3bpgy"]
+[ext_resource type="Texture2D" uid="uid://c6qp8yy1ipfqp" path="res://Models/Train/Metro_metal_03.jpg" id="7_1or7y"]
+[ext_resource type="Texture2D" uid="uid://cgxyih2ph284d" path="res://Models/Train/Metro_Floor.png" id="8_rqm2u"]
+[ext_resource type="Texture2D" uid="uid://c4grl5kq2f1fr" path="res://Models/Train/Metro_metal_04.png" id="9_j5ura"]
+[ext_resource type="Texture2D" uid="uid://dyimwydq11tho" path="res://Models/Train/Metro_Trains_01.jpg" id="10_yegrq"]
+[ext_resource type="Texture2D" uid="uid://1ofqfd5ep7jh" path="res://Models/Train/Metro_Trains.png" id="11_7gr8e"]
+
 [ext_resource type="PackedScene" uid="uid://c4a42ybb4lhq3" path="res://Models/Emergency Door/Emergency_Exit_Door.glb" id="2_lvvat"]
 [ext_resource type="ArrayMesh" uid="uid://blp6gnvndm5mc" path="res://Models/Train/train_mesh.tres" id="3_57qrf"]
 [ext_resource type="PackedScene" uid="uid://c3lqvrjlwffvd" path="res://Models/Turnstile/Turnstile.glb" id="3_rxnfp"]
 [ext_resource type="ArrayMesh" uid="uid://c0ukotu2sahhv" path="res://Models/Train/door_mesh.tres" id="4_obnkt"]
+
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bunqd"]
 
@@ -297,6 +315,16 @@ background_mode = 1
 background_color = Color(0.321569, 0.321569, 0.321569, 1)
 
 [node name="137" type="Node3D"]
+script = ExtResource("1_xbwpr")
+pause_menu_packed_scene = ExtResource("2_f5m0y")
+
+[node name="UI_Container" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="UI_Container"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Station" parent="." instance=ExtResource("1_yoh48")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
