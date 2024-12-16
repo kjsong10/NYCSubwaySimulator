@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+@onready var joystick_right = $Controls/Virtual_Joystick_Right
+@onready var playerWalkingAudioStream = $footsteps_audio/footsteps_audio
+
 
 const DEFAULT_SPEED = 10.0
 var SPEED = DEFAULT_SPEED
@@ -10,7 +13,7 @@ const JUMP_VELOCITY = 6
 
 @onready var train_arrived = false
 
-
+# THIS IS COMMENTED SO MOUSE IS FREE TO MOVE AND NOT LOCKED
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -22,7 +25,14 @@ func _unhandled_input(event: InputEvent) -> void:
 			camera.rotate_x(-event.relative.y * 0.01)
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))
 
+
+
 func _physics_process(delta: float) -> void:
+	if joystick_right and joystick_right.is_pressed:
+		var look_input = joystick_right.output
+		neck.rotate_y(-look_input.x * 0.02)  # Horizontal rotation (yaw)       CHANGE THESE FOR SENSITIVITY
+		camera.rotate_x(-look_input.y * 0.02)  # Vertical rotation (pitch)     CHANGE THESE FOR SENSITIVITY 
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))  # Limit vertical rotation
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -38,6 +48,8 @@ func _physics_process(delta: float) -> void:
 		SPEED = 20
 	if Input.is_action_just_released("run"):
 		SPEED = DEFAULT_SPEED
+	if Input.is_action_pressed("reset"):
+		position = Vector3(0,0,0)
 		
 
 	# Get the input direction and handle the movement/deceleration.
@@ -47,9 +59,13 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		if is_on_floor():
+			if !playerWalkingAudioStream.playing:
+				playerWalkingAudioStream.play()
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+		playerWalkingAudioStream.stop()
 
 	move_and_slide()
 
@@ -90,9 +106,15 @@ func _on__child_entered_tree(node: Node) -> void:
 func _on_summon_train_body_entered(body: Node3D) -> void:
 	if(body.is_in_group("player") and !train_arrived):
 		var train = $"/root/137/Train"
+		var train2= $"/root/137/Train2"
 		train.set_visible(true)
+		train2.set_visible(true)
 		var animPlayer: AnimationPlayer = $"/root/137/Train/AnimationPlayer"
+		var animPlayer1: AnimationPlayer = $"/root/137/Train2/AnimationPlayer"
+		
 		animPlayer.play("Enter Station")
+		animPlayer1.play("Enter Station_2")
+		
 		train_arrived = true
 
 func open_map():
