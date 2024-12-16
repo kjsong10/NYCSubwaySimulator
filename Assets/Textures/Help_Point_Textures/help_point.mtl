@@ -1,0 +1,42 @@
+# Blender 4.2.3 LTS MTL File: 'help_point.blend'
+# www.blender.org
+
+newmtl Base
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/babur/Documents/Blender Textures/128x128/Help_Point/help_point_LED_2.png
+
+newmtl LED
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/babur/Documents/Blender Textures/128x128/Help_Point/help_point_LED.png
+
+newmtl Station_Interface_1
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/babur/Documents/Blender Textures/128x128/Help_Point/help_point_Interface_texture.png
+
+newmtl Station_Interface_2
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/babur/Documents/Blender Textures/128x128/Help_Point/help_point_Interface_texture_2.png
