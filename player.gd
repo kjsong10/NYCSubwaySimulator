@@ -48,6 +48,8 @@ func _physics_process(delta: float) -> void:
 		SPEED = 20
 	if Input.is_action_just_released("run"):
 		SPEED = DEFAULT_SPEED
+	if Input.is_action_pressed("reset"):
+		position = Vector3(0,0,0)
 		
 
 	# Get the input direction and handle the movement/deceleration.
