@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bdxtnywc2ouod"
+path.s3tc="res://.godot/imported/train_tracks_Worn_Old_Wood_Planks_Base_Color.jpg-489889c4a4f90f2205048d1a3057c3da.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "67d587a7d065d7ea2d326a9b1769c4b1"
+}
+
+[deps]
+
+source_file="res://Models/Train Tracks/train_tracks_Worn_Old_Wood_Planks_Base_Color.jpg"
+dest_files=["res://.godot/imported/train_tracks_Worn_Old_Wood_Planks_Base_Color.jpg-489889c4a4f90f2205048d1a3057c3da.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
